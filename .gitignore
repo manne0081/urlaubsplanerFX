@@ -21,3 +21,20 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+
+# #########
+# OWN-FILES
+# #########
+
+# Eclipse
+.classpath
+.project
+
+# IntelliJ
+# ********
+misc.xml
+modules.xml
+vcs.xml
+*.iml
+encoding.xml
+.bin

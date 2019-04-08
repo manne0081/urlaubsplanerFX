@@ -1,5 +1,8 @@
 package application.model;
 
+/**
+ *
+ */
 public class Employee {	
 	
 	private String nameI;
@@ -10,20 +13,34 @@ public class Employee {
 	private int vacationClaim;
 	
 	private Department department;
-	
+
+	/* simulate Data */
 	private static Employee[] employeeList = {
-		new Employee("Daniel", "Düsentrieb", "dueda", "pass"),
-		new Employee("Kater", "Karlo", "karka", "pass"),
+		new Employee("Daniel", "Düsentrieb", "daniel", "pass"),
+		new Employee("Kater", "Karlo", "kater", "pass"),
 	};
-	
-	
+
+
 	/* Constructor */
+	/**
+	 *
+	 * @param nameI
+	 * @param user
+	 * @param pass
+	 */
 	public Employee(String nameI, String user, String pass) {
 		this.setNameI(nameI);
 		this.setUserName(user);
 		this.setPassword(pass);
 	}
 
+	/**
+	 *
+	 * @param nameI
+	 * @param nameII
+	 * @param user
+	 * @param pass
+	 */
 	public Employee(String nameI, String nameII, String user, String pass) {
 		this.setNameI(nameI);
 		this.setNameII(nameII);
@@ -31,8 +48,8 @@ public class Employee {
 		this.setPassword(pass);
 	}
 
-	
-	/* Getter and Setter */
+
+	/* GETTER & SETTER */
 	public String getNameI() {
 		return nameI;
 	}
@@ -86,6 +103,13 @@ public class Employee {
 	
 	
 	/* public Methods */
+
+	/**
+	 *
+	 * @param userName
+	 * @param password
+	 * @return
+	 */
 	public static boolean checkLogin(String userName, String password) {
 		boolean bool = false;
 		for (Employee employee : employeeList) {
@@ -97,7 +121,13 @@ public class Employee {
 		}
 		return bool;
 	}
-	
+
+	/**
+	 *
+	 * @param userName
+	 * @param password
+	 * @return
+	 */
 	public static Employee checkLogin2(String userName, String password) {
 		Employee employee = null;
 		for (Employee e : employeeList) {
@@ -109,7 +139,11 @@ public class Employee {
 		}
 		return employee;
 	}
-	
+
+	/**
+	 *
+	 * @return
+	 */
 	public String getFullName() {
 		String strAll = "";
 		if (this.getNameI() != "") {
