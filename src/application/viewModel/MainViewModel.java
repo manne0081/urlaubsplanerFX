@@ -53,9 +53,6 @@ public class MainViewModel {
 			stage.setScene(scene);
 			stage.show();
 
-			Session.setEmployee(null);
-			System.out.println("Session: " + Session.getEmployee());
-
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

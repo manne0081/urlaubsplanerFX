@@ -33,7 +33,7 @@
             </Label>
         <Label text="Benutzername">
           <VBox.margin>
-            <Insets left="-130.0" top="30.0" />
+            <Insets left="-110.0" top="30.0" />
           </VBox.margin>
         </Label>
         <TextField fx:id="userName" maxWidth="200.0" />
