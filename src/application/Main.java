@@ -1,5 +1,6 @@
 package application;
 	
+import application.model.Absence;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
@@ -11,7 +12,7 @@ public class Main extends Application {
 	
 	public static void main(String[] args) {
 		launch(args);
-
+		Absence.getAllAbsenceFromArrayList();
 	}
 	
 	@Override

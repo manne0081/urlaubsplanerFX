@@ -15,6 +15,7 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
+import javax.swing.text.View;
 import java.io.IOException;
 
 
@@ -29,6 +30,19 @@ public class AbsenceViewModel {
 	private Button soughtVacationButton;
 	@FXML
 	private Label soughtVacationLabel;
+
+
+	public Label getSoughtVacationLabel() {
+		return soughtVacationLabel;
+	}
+
+	private void setSoughtVacationLabel(Absence absence) {
+		String string = "";
+		string += "Urlaubnehmer: " + Session.getEmployee().getFullName();
+		string += " - Urlaub von: " + Absence.getAbsenceFrom();
+
+		this.soughtVacationLabel.setText(string);
+	}
 
 
 	public void backToMainView(ActionEvent event) {
@@ -48,19 +62,14 @@ public class AbsenceViewModel {
 			e.printStackTrace();
 		}
 
-	}
+//		ViewLoadHelper.loadMainView(event);
 
-	public Label getSoughtVacationLabel() {
-		return soughtVacationLabel;
-	}
-
-	public void setSoughtVacationLabel() {
-		this.soughtVacationLabel.setText(Session.getEmployee().getFullName());
 	}
 
 	public void applyForVacation(ActionEvent event) {
 		Absence absence = new Absence(Session.getEmployee());
-		setSoughtVacationLabel();
+		absence.setAbsenceToArrayList(absence);
+		setSoughtVacationLabel(absence);
 	}
 
 

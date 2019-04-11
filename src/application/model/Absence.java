@@ -1,5 +1,6 @@
 package application.model;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 /**
@@ -7,9 +8,9 @@ import java.util.Date;
  */
 public class Absence {
 	private Employee employee;
-	private Date absenceFrom;
+	private static Date absenceFrom;
 	private Date absenceTo;
-
+	private static ArrayList<Absence> absences = new ArrayList<Absence>();
 
 	/* Constructor */
 	public Absence(Employee employee) {
@@ -32,7 +33,33 @@ public class Absence {
 		this.employee = employee;
 	}
 
+	public static Date getAbsenceFrom() {
+		return absenceFrom;
+	}
 
+	public void setAbsenceFrom(Date absenceFrom) {
+		this.absenceFrom = absenceFrom;
+	}
+
+	public Date getAbsenceTo() {
+		return absenceTo;
+	}
+
+	public void setAbsenceTo(Date absenceTo) {
+		this.absenceTo = absenceTo;
+	}
+
+
+
+	public static void getAllAbsenceFromArrayList() {
+		for (int i = 0; i < absences.size(); i++) {
+			System.out.println(absences.get(i).getEmployee().getFullName());
+		}
+	}
+
+	public void setAbsenceToArrayList(Absence absence) {
+		absences.add(absence);
+	}
 
 
 
